@@ -25,7 +25,7 @@ npm install -g typescript
 
 ```shell
 # Usage
-# ts-nodemon --project <project> --tsconfig <tsconfig> --entry <entry> --exec <exec>
+# ts-nodemon --project <project> --tsconfig <tsconfig> --entry <entry> --exec <exec> --no-notify
 
 # Args:
 #  project:   will be passed as "tsc --project <project>"
@@ -36,12 +36,23 @@ npm install -g typescript
 #             optional, default: "main" field in "package.json"
 #  exec:      specify a custom command to run
 #             optional
+#  no-notify: turn off notification
+#             by default notification is shown on error using "node-notifier"
 
 # Examples
 
 # use `tsconfig.json` in current working directory
 # use entry JS file from "main" field in "package.json"
 ts-nodemon
+
+# turn off notification
+ts-nodemon --no-notify
+
+# custom project location
+ts-nodemon --project ../project
+
+# custom tsconfig file name
+ts-nodemon --tsconfig tsconfig2.json
 
 # use "build/main.js" as entry file
 ts-nodemon --entry "build/main.js"

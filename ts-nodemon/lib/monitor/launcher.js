@@ -1,10 +1,13 @@
-const { spawn } = require('child_process')
 const fs = require('fs')
+const { spawn } = require('child_process')
+const EventEmitter = require('events')
 const logger = require('../utils/logger')
 
-class Launcher {
+class Launcher extends EventEmitter {
 
   constructor(options) {
+    super()
+
     this._options = options
 
     this._proc = null
@@ -52,10 +55,7 @@ class Launcher {
   }
 
   _onProcessClose(code = null, signal = null) {
-    const info = 'code = ' + code + (signal ? ', signal = ' + signal : '')
-    const log = code === 0 ? logger.warn : logger.error
-
-    log('process closed:', logger.color.white(info))
+    this.emit('process.close', code, signal)
 
     this._proc = null
   }

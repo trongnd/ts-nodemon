@@ -1,17 +1,38 @@
 {
   "name": "@trongnd/ts-nodemon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compiles your TS app and restarts when files are modified.",
   "license": "MIT",
+  "author": {
+    "name": "Trong Nguyen",
+    "email": "trongn.nd@outlook.com",
+    "url": "https://github.com/trongnd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trongnd/ts-nodemon.git"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "prepublish": "cp-cli ../README.md README.md",
+    "postpublish": "del-cli README.md"
+  },
   "main": "./lib/index.js",
   "bin": {
     "ts-nodemon": "./bin/ts-nodemon"
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "node-notifier": "^5.2.1"
   },
   "peerDependencies": {
     "typescript": ">=2.7.0"
+  },
+  "devDependencies": {
+    "cp-cli": "^1.1.2",
+    "del-cli": "^1.1.0"
   }
 }

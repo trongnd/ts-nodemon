@@ -73,7 +73,9 @@ class Watcher extends EventEmitter {
       hostAfterProgramCreate(program)
 
       if (this._error) {
-        this.emit('build.error', this._error)
+        const formattedError = ts.formatDiagnosticsWithColorAndContext([this._error], FORMAT_HOST)
+        this.emit('build.error', formattedError, this._error)
+
         this._error = null
       } else {
         this.emit('build.finish')
@@ -102,7 +104,7 @@ class Watcher extends EventEmitter {
   }
 
   _reportDiagnostic(diagnostic) {
-    this._error = ts.formatDiagnosticsWithColorAndContext([diagnostic], FORMAT_HOST)
+    this._error = diagnostic
   }
 
   _reportWatchStatusChanged(diagnostic) {

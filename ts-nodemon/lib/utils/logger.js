@@ -1,4 +1,5 @@
 const chalk = require('chalk').default
+const notifier = require('node-notifier')
 
 const log = color => (...args) => {
   console.log(
@@ -7,7 +8,16 @@ const log = color => (...args) => {
   )
 }
 
+const notify = (title = '', message = '') => {
+  notifier.notify({
+    title: `[ts-nodemon] ${title}`,
+    message
+  })
+}
+
 module.exports = {
+  notify,
+
   color: chalk,
   log: console.log.bind(console),
   info: log(chalk.bold.blue),
