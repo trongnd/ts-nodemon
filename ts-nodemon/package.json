@@ -1,0 +1,17 @@
+{
+  "name": "ts-nodemon",
+  "version": "1.0.0",
+  "description": "Compiles your TS app and restarts when files are modified.",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "bin": {
+    "ts-nodemon": "./bin/ts-nodemon"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "minimist": "^1.2.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=2.7.0"
+  }
+}

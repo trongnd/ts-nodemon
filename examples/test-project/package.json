@@ -1,0 +1,20 @@
+{
+  "name": "ts-nodemon-test-project",
+  "version": "1.0.0",
+  "private": true,
+  "main": "build/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node build/index.js",
+    "dev": "yarn run build.clean && yarn run dev.run",
+    "dev.run": "ts-nodemon --exec \"yarn start\"",
+    "build": "yarn run build.clean && yarn run build.run",
+    "build.clean": "rimraf build",
+    "build.run": "tsc --project ."
+  },
+  "devDependencies": {
+    "ts-nodemon": "1.0.0",
+    "rimraf": "^2.6.2",
+    "typescript": "^3.0.1"
+  }
+}
