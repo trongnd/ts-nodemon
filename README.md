@@ -3,7 +3,7 @@
 > Compiles your TypeScript app and restarts when files are modified. **Works with `typescript@>=2.7`**.
 
 ## How It Works
-**`ts-nodemon`** runs TypeScript compiler in watch mode, and restart Node.JS when TypeScript files are modified.
+**`ts-nodemon`** runs TypeScript compiler in watch mode, and restarts Node.JS when TypeScript files are modified.
 
 TypeScript compiler options are specified using `tsconfig.json` file.
 
@@ -11,11 +11,11 @@ TypeScript compiler options are specified using `tsconfig.json` file.
 
 ```shell
 # Locally in your project
-npm install -D ts-nodemon
+npm install -D @trongnd/ts-nodemon
 npm install -D typescript
 
 # Or globally (not recommended)
-npm install -g ts-nodemon
+npm install -g @trongnd/ts-nodemon
 npm install -g typescript
 ```
 

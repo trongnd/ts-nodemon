@@ -1,5 +1,5 @@
 {
-  "name": "ts-nodemon",
+  "name": "@trongnd/ts-nodemon",
   "version": "1.0.0",
   "description": "Compiles your TS app and restarts when files are modified.",
   "license": "MIT",
