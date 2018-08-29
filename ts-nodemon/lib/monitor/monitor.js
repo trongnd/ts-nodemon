@@ -47,6 +47,7 @@ class Monitor {
     }
 
     if (this._launcher) {
+      this._launcher.removeAllListeners()
       this._launcher.stop()
       this._launcher = null
     }

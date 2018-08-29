@@ -62,4 +62,4 @@ ts-nodemon --exec "yarn start"
 ```
 
 ## License
-MIT http://rem.mit-license.org
+MIT https://mit-license.org
