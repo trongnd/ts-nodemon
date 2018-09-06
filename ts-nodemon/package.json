@@ -1,6 +1,6 @@
 {
   "name": "@trongnd/ts-nodemon",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Compiles your TS app and restarts when files are modified.",
   "license": "MIT",
   "author": {
@@ -26,7 +26,8 @@
   "dependencies": {
     "chalk": "^2.4.1",
     "minimist": "^1.2.0",
-    "node-notifier": "^5.2.1"
+    "node-notifier": "^5.2.1",
+    "tree-kill": "^1.2.0"
   },
   "peerDependencies": {
     "typescript": ">=2.7.0"

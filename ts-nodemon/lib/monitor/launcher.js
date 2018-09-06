@@ -1,6 +1,7 @@
 const fs = require('fs')
 const { spawn } = require('child_process')
 const EventEmitter = require('events')
+const kill = require('tree-kill')
 const logger = require('../utils/logger')
 
 class Launcher extends EventEmitter {
@@ -45,7 +46,7 @@ class Launcher extends EventEmitter {
 
     this._proc.removeAllListeners()
 
-    this._proc.kill()
+    kill(this._proc.pid, 'SIGKILL')
     this._proc = null
   }
 

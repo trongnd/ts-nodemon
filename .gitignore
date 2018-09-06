@@ -1,5 +1,6 @@
 node_modules
 build
+ts-nodemon/README.md
 
 *.log
 npm-debug.log*
